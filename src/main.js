@@ -12,8 +12,13 @@ btnMenu.addEventListener('click', ()=>{
 //Overlay
 
 const ProjectCar1 = document.getElementById('card-1')
+const ProjectCar3 = document.getElementById('card-3')
+
+const overlay3 = document.querySelector('#overlay3')
 const overlay = document.querySelector('.overlay')
+
 const x1 = document.getElementById('x1')
+const x3 = document.getElementById('x3')
 
 ProjectCar1.addEventListener('click', () => {
     overlay.classList.add('mostrarOverlay1')
@@ -21,6 +26,15 @@ ProjectCar1.addEventListener('click', () => {
 })
 x1.addEventListener('click', ()=>{
     overlay.classList.remove('mostrarOverlay1')
+    document.body.classList.remove("no-scroll");
+})
+
+ProjectCar3.addEventListener('click', () => {
+    overlay3.classList.add('mostrarOverlay1')
+    document.body.classList.add("no-scroll");
+})
+x3.addEventListener('click', ()=>{
+    overlay3.classList.remove('mostrarOverlay1')
     document.body.classList.remove("no-scroll");
 })
 
