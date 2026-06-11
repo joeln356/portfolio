@@ -92,7 +92,7 @@ if (card_desc) observer2.observe(card_desc);
 if(sobre) observer2.observe(sobre)
 if(skill) observer2.observe(skill)
 
-    //Validação do formulário de mensagem
+//Validação do formulário de mensagem
 
 const form = document.querySelector('.contact-form');
 const btn = document.querySelector('.contact-form__submit');
@@ -154,40 +154,40 @@ function validarForm() {
     });
 });
 
-// -------- SUBMIT --------
-form.addEventListener('submit', (e) => {
-    const nomeOk = validarNome();
-    const emailOk = validarEmail();
-    const msgOk = validarMensagem();
+// // -------- SUBMIT --------
+// form.addEventListener('submit', (e) => {
+//     const nomeOk = validarNome();
+//     const emailOk = validarEmail();
+//     const msgOk = validarMensagem();
 
-    mostrarErro(nameInput, 0, nomeOk);
-    mostrarErro(emailInput, 1, emailOk);
-    mostrarErro(messageInput, 2, msgOk);
+//     mostrarErro(nameInput, 0, nomeOk);
+//     mostrarErro(emailInput, 1, emailOk);
+//     mostrarErro(messageInput, 2, msgOk);
 
-    if (!(nomeOk && emailOk && msgOk)) {
-        e.preventDefault();
-        return;
-    }
+//     if (!(nomeOk && emailOk && msgOk)) {
+//         e.preventDefault();
+//         return;
+//     }
 
-    setTimeout(() => { 
-        form.reset(); 
-        btn.disabled = true; 
-        window.scrollTo({ top: 0, behavior: 'smooth' }); 
-    }, 100);
-});
+//     setTimeout(() => { 
+//         form.reset(); 
+//         btn.disabled = true; 
+//         window.scrollTo({ top: 0, behavior: 'smooth' }); 
+//     }, 100);
+// });
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
 
-    const data = new FormData(form);
+//     const data = new FormData(form);
 
-    await fetch(form.action, {
-        method: 'POST',
-        body: data
-    });
+//     await fetch(form.action, {
+//         method: 'POST',
+//         body: data
+//     });
 
-    form.reset();
-    btn.disabled = true;
+//     form.reset();
+//     btn.disabled = true;
 
-    window.location.href = "#HOME";
-});
+//     window.location.href = "#HOME";
+// });
